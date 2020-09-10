@@ -9,5 +9,5 @@ setup(
     license='MIT',
     py_modules=['pytest_suite_execution'],
     install_requires=['pytest'],
-    entry_points = {'pytest11': ['suite = pytest_suite_execution',]},
+    entry_points = {'pytest11': ['suite = pytest_suite_execution']},
 )
