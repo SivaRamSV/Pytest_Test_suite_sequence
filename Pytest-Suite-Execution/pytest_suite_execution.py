@@ -19,14 +19,17 @@ def pytest_collection_modifyitems(session, config, items):
     path = config.getoption('--suite_cfg')
     suite_name = config.getoption('--suite_name')
     
-    if path:
+    if path and suite_name:
         try:
-            get_seq_no = operator.itemgetter(0)
             with open(path) as f:
+
                 data = json.load(f)
 
             if suite_name in data:
+
+                get_seq_no = operator.itemgetter(0)
                 temp_group={}
+
                 for k,v in data[suite_name].items():
                     for i in items:
                         if k.lower()in str(i):
@@ -34,19 +37,22 @@ def pytest_collection_modifyitems(session, config, items):
                             break
 
                 _final_data={}
+                { _final_data.setdefault(temp_group[k], []).append(k) for k,v in temp_group.items() } 
 
-                { _final_data.setdefault(temp_group[k], []).append(k) for k,v in temp_group.items() }  
-               
                 _final_items_list = []
+
                 temp_list = sorted( 
-                                    (i for i in _final_data.items() if i[0] > 0),key=get_seq_no
+                                    (i for i in _final_data.items() if i[0] >= 0),key=get_seq_no
                                 )
+
                 _final_items_list.extend([i[1] for i in temp_list])
                 items[:] = [item for sublist in _final_items_list for item in sublist]
-            
-        except FileNotFoundError:
+            else:
+                raise Exception ("CONFLICT IN SUITE NAME, RECHECK THE SUITE NAME ")    
 
-            print("File Not found")
+        except Exception as e:
+
+            print(str(e).upper())
 
 
     
