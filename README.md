@@ -1,31 +1,24 @@
 # Pytest_Test_suite_sequence
-Pytest plugin to mention testsuite sequnece along with the name of the test case
+Pytest plugin to execute testsuite in a sequnece using a json file.
 
 Strictly follow the steps given below. 
-
 
 1. Make sure that the json file is placed inside the exact location mentioned after the parser "--suite_cfg" 
 
     example : --suite_cfg ./test_suite_sequence.json
 
-2. Make sure that the parser key word is "--suite_name" followed by the test suite name, mentioned in the json file only
+2. Make sure that the parser keyword "--suite_name" is followed by the test_suite name, mentioned in the json file.
 
     example : --suite functionality
 
-
 3. Sample pytest Cmd:
 
-        pytest ./test -p no:randomly --suite_cfg ./test_suite_sequence.json --suite_name throughput
+        pytest ./test --suite_cfg ./test_suite_sequence.json --suite_name throughput
 
     where,
     "./test" - test folder in the current execution folder
     "throughput" - suite name mentioned in the json file.
-    "-p no:randomly" - pytest-randomly cmd
 
-4. sample json file.
+4. Sample json file.
 
-    {
-
-    throughput":{"CNXA_test3":2,"CNXA_test2":1,"CNXA_test":3}
-
-    }
+    please reffer the sample.json file
