@@ -1,48 +1,51 @@
+""" Pytest Configuration for Pytest-Suite-Execution"""
+import json
+import operator
 
 def pytest_addoption(parser):
-    
 
     suite = parser.getgroup('suite')
-    suite.addoption("--suite",
+    suite.addoption("--suite_name",
                     action="store",
                     default=False,
-                    help="Mention the test suite type specified in the json file")
-
-
-
+                    help="Mention the test case type specified in the json file")
+    suite.addoption("--suite_cfg",
+                    action="store",
+                    default=False,
+                    help="Test suite json file location")
+ 
 def pytest_collection_modifyitems(session, config, items):
 
-    path =config.getoption('suite')
+    path = config.getoption('--suite_cfg')
+    suite_name = config.getoption('--suite_name')
+    
     if path:
-        import json
-        import operator
         try:
-            with open('./test_suite_sequence.json') as f:
+            get_seq_no = operator.itemgetter(0)
+            with open(path) as f:
                 data = json.load(f)
-            if path in data:  
-               
-                get_seq_no=operator.itemgetter(0)
+
+            if suite_name in data:
                 temp_group={}
-                for k,v in data[path].items():
+                for k,v in data[suite_name].items():
                     for i in items:
                         if k.lower()in str(i):
-                            temp_group[i]=data[path][k]
+                            temp_group[i]=data[suite_name][k]
                             break
-                grouped_items = {} 
-                for k,v in temp_group.items():
-                    order=0
-                    order=temp_group[k]
-                    grouped_items.setdefault(order, []).append(k)
-                sorted_items = []
-                temp_list = sorted((i for i in grouped_items.items() if i[0] >= 0),
-                                    key=get_seq_no)
+
+                _final_data={}
+
+                { _final_data.setdefault(temp_group[k], []).append(k) for k,v in temp_group.items() }  
                
-                sorted_items.extend([i[1] for i in temp_list])
-                items[:] = [item for sublist in sorted_items for item in sublist]
-                print(items)
+                _final_items_list = []
+                temp_list = sorted( 
+                                    (i for i in _final_data.items() if i[0] > 0),key=get_seq_no
+                                )
+                _final_items_list.extend([i[1] for i in temp_list])
+                items[:] = [item for sublist in _final_items_list for item in sublist]
             
-                
         except FileNotFoundError:
+
             print("File Not found")
 
 

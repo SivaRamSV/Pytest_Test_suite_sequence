@@ -2,8 +2,8 @@ from setuptools import setup
 
 setup(
     name="pytest-suite-execution",
-    version= '1.0',
-    description="A Pytest plugin to excute test suite on a specified order using a json file",
+    version= '0.1.0',
+    description="A Pytest plugin to excute test suite's in a specified order using a json file",
     author='Sivaram SV',
     author_email='sivaramshibu@live.com',
     license='MIT',
