@@ -1,5 +1,6 @@
 # Pytest_Test_suite_sequence
-Pytest plugin to execute testsuite in a sequnece using a json file.
+Pytest plugin to execute testsuite in a user defined sequnece using a json file.
+
 
 Strictly follow the steps given below. 
 
