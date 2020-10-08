@@ -1,0 +1,8 @@
+pytest_suite_execution.py
+setup.py
+pytest_suite_execution.egg-info/PKG-INFO
+pytest_suite_execution.egg-info/SOURCES.txt
+pytest_suite_execution.egg-info/dependency_links.txt
+pytest_suite_execution.egg-info/entry_points.txt
+pytest_suite_execution.egg-info/requires.txt
+pytest_suite_execution.egg-info/top_level.txt
