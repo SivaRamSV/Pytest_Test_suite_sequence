@@ -1,0 +1,43 @@
+action: GLOB, msg: packaging
+cwd: C:\Users\sivaram\Documents\GitHub\Pytest_Test_suite_sequence\Pytest-Suite-Execution
+cmd: 'c:\users\sivaram\appdata\local\programs\python\python37\python.exe' setup.py sdist --formats=zip --dist-dir '.tox\dist'
+running sdist
+running egg_info
+writing pytest_suite_execution.egg-info\PKG-INFO
+writing dependency_links to pytest_suite_execution.egg-info\dependency_links.txt
+writing entry points to pytest_suite_execution.egg-info\entry_points.txt
+writing requirements to pytest_suite_execution.egg-info\requires.txt
+writing top-level names to pytest_suite_execution.egg-info\top_level.txt
+reading manifest file 'pytest_suite_execution.egg-info\SOURCES.txt'
+writing manifest file 'pytest_suite_execution.egg-info\SOURCES.txt'
+warning: sdist: standard file not found: should have one of README, README.rst, README.txt, README.md
+
+running check
+warning: check: missing required meta-data: url
+
+creating pytest-suite-execution-0.1.0
+creating pytest-suite-execution-0.1.0\pytest_suite_execution.egg-info
+copying files to pytest-suite-execution-0.1.0...
+copying pytest_suite_execution.py -> pytest-suite-execution-0.1.0
+copying setup.py -> pytest-suite-execution-0.1.0
+copying pytest_suite_execution.egg-info\PKG-INFO -> pytest-suite-execution-0.1.0\pytest_suite_execution.egg-info
+copying pytest_suite_execution.egg-info\SOURCES.txt -> pytest-suite-execution-0.1.0\pytest_suite_execution.egg-info
+copying pytest_suite_execution.egg-info\dependency_links.txt -> pytest-suite-execution-0.1.0\pytest_suite_execution.egg-info
+copying pytest_suite_execution.egg-info\entry_points.txt -> pytest-suite-execution-0.1.0\pytest_suite_execution.egg-info
+copying pytest_suite_execution.egg-info\requires.txt -> pytest-suite-execution-0.1.0\pytest_suite_execution.egg-info
+copying pytest_suite_execution.egg-info\top_level.txt -> pytest-suite-execution-0.1.0\pytest_suite_execution.egg-info
+Writing pytest-suite-execution-0.1.0\setup.cfg
+creating '.tox\dist\pytest-suite-execution-0.1.0.zip' and adding 'pytest-suite-execution-0.1.0' to it
+adding 'pytest-suite-execution-0.1.0'
+adding 'pytest-suite-execution-0.1.0\pytest_suite_execution.egg-info'
+adding 'pytest-suite-execution-0.1.0\PKG-INFO'
+adding 'pytest-suite-execution-0.1.0\pytest_suite_execution.py'
+adding 'pytest-suite-execution-0.1.0\setup.cfg'
+adding 'pytest-suite-execution-0.1.0\setup.py'
+adding 'pytest-suite-execution-0.1.0\pytest_suite_execution.egg-info\dependency_links.txt'
+adding 'pytest-suite-execution-0.1.0\pytest_suite_execution.egg-info\entry_points.txt'
+adding 'pytest-suite-execution-0.1.0\pytest_suite_execution.egg-info\PKG-INFO'
+adding 'pytest-suite-execution-0.1.0\pytest_suite_execution.egg-info\requires.txt'
+adding 'pytest-suite-execution-0.1.0\pytest_suite_execution.egg-info\SOURCES.txt'
+adding 'pytest-suite-execution-0.1.0\pytest_suite_execution.egg-info\top_level.txt'
+removing 'pytest-suite-execution-0.1.0' (and everything under it)

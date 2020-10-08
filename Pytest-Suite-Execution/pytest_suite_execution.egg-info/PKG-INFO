@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: pytest-suite-execution
+Version: 0.1.0
+Summary: A Pytest plugin to excute test suite's in a specified order using a json file
+Home-page: UNKNOWN
+Author: Sivaram SV
+Author-email: sivaramshibu@live.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
